@@ -15,5 +15,6 @@ class Book(models.Model):
 	desc = models.TextField()
 	created_at = models.DateTimeField(auto_now_add = True)
 	updated_at = models.DateTimeField(auto_now = True)
-	user = models.ForeignKey(User, related_name = "books")
+	uploader = models.ForeignKey(User, related_name = "books")
+	liked by = models.ManyToManyField(User, related_name = "liked_books")
 
